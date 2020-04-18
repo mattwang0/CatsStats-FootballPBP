@@ -1,0 +1,727 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20192.19.0917.1648                               -->
+<workbook original-version='18.1' source-build='2019.2.4 (20192.19.0917.1648)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Show Play Details' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Off&quot;'>
+        <calculation class='tableau' formula='&quot;Off&quot;' />
+        <members>
+          <member value='&quot;Off&quot;' />
+          <member value='&quot;On&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='pbp' inline='true' name='federated.0jo9wsi1i06ki4115pzbx04aiyhr' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='pbp' name='textscan.074ask805h8zce1211uc50ln2yxu'>
+            <connection class='textscan' directory='/Users/matt/Google Drive/cats-stats/davidson-football' filename='pbp.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.074ask805h8zce1211uc50ln2yxu' name='pbp-butler.csv' table='[pbp-butler#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='PLAY_NUM' ordinal='0' />
+            <column datatype='integer' name='YEAR' ordinal='1' />
+            <column datatype='string' name='OFF/DEF' ordinal='2' />
+            <column datatype='date' name='DATE' ordinal='3' />
+            <column datatype='string' name='OPPONENT' ordinal='4' />
+            <column datatype='integer' name='QTR' ordinal='5' />
+            <column datatype='datetime' name='TIME' ordinal='6' />
+            <column datatype='string' name='Pand10' ordinal='7' />
+            <column datatype='integer' name='DOWN' ordinal='8' />
+            <column datatype='integer' name='TO_GAIN' ordinal='9' />
+            <column datatype='integer' name='POS' ordinal='10' />
+            <column datatype='string' name='PLAY_TYPE' ordinal='11' />
+            <column datatype='integer' name='GAIN' ordinal='12' />
+            <column datatype='string' name='P1' ordinal='13' />
+            <column datatype='string' name='P2' ordinal='14' />
+            <column datatype='string' name='PLAY_DETAIL' ordinal='15' />
+            <column datatype='string' name='WIN/LOSS' ordinal='16' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[pbp-butler.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PLAY_NUM</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PLAY_NUM]</local-name>
+            <parent-name>[pbp-butler.csv]</parent-name>
+            <remote-alias>PLAY_NUM</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YEAR</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[YEAR]</local-name>
+            <parent-name>[pbp-butler.csv]</parent-name>
+            <remote-alias>YEAR</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OFF/DEF</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[OFF/DEF]</local-name>
+            <parent-name>[pbp-butler.csv]</parent-name>
+            <remote-alias>OFF/DEF</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DATE</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[DATE]</local-name>
+            <parent-name>[pbp-butler.csv]</parent-name>
+            <remote-alias>DATE</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OPPONENT</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[OPPONENT]</local-name>
+            <parent-name>[pbp-butler.csv]</parent-name>
+            <remote-alias>OPPONENT</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>QTR</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[QTR]</local-name>
+            <parent-name>[pbp-butler.csv]</parent-name>
+            <remote-alias>QTR</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TIME</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[TIME]</local-name>
+            <parent-name>[pbp-butler.csv]</parent-name>
+            <remote-alias>TIME</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pand10</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Pand10]</local-name>
+            <parent-name>[pbp-butler.csv]</parent-name>
+            <remote-alias>Pand10</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DOWN</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DOWN]</local-name>
+            <parent-name>[pbp-butler.csv]</parent-name>
+            <remote-alias>DOWN</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TO_GAIN</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[TO_GAIN]</local-name>
+            <parent-name>[pbp-butler.csv]</parent-name>
+            <remote-alias>TO_GAIN</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>POS</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[POS]</local-name>
+            <parent-name>[pbp-butler.csv]</parent-name>
+            <remote-alias>POS</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PLAY_TYPE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[PLAY_TYPE]</local-name>
+            <parent-name>[pbp-butler.csv]</parent-name>
+            <remote-alias>PLAY_TYPE</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GAIN</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[GAIN]</local-name>
+            <parent-name>[pbp-butler.csv]</parent-name>
+            <remote-alias>GAIN</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>P1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[P1]</local-name>
+            <parent-name>[pbp-butler.csv]</parent-name>
+            <remote-alias>P1</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>P2</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[P2]</local-name>
+            <parent-name>[pbp-butler.csv]</parent-name>
+            <remote-alias>P2</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PLAY_DETAIL</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[PLAY_DETAIL]</local-name>
+            <parent-name>[pbp-butler.csv]</parent-name>
+            <remote-alias>PLAY_DETAIL</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WIN/LOSS</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[WIN/LOSS]</local-name>
+            <parent-name>[pbp-butler.csv]</parent-name>
+            <remote-alias>WIN/LOSS</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Show Play Details' datatype='string' name='[Calculation_856035804728614912]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = &quot;On&quot; THEN&#10;    [PLAY_DETAIL]&#10;END' />
+      </column>
+      <column caption='Date' datatype='date' name='[DATE]' role='dimension' type='ordinal' />
+      <column caption='Down' datatype='integer' name='[DOWN]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Gain' datatype='integer' name='[GAIN]' role='dimension' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Off/Def' datatype='string' name='[OFF/DEF]' role='dimension' type='nominal' />
+      <column caption='Opponent' datatype='string' name='[OPPONENT]' role='dimension' type='nominal' />
+      <column caption='Play Detail' datatype='string' name='[PLAY_DETAIL]' role='dimension' type='nominal' />
+      <column caption='Play Num' datatype='integer' name='[PLAY_NUM]' role='dimension' type='ordinal' />
+      <column caption='Play Type' datatype='string' name='[PLAY_TYPE]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='POS1' datatype='integer' name='[POS]' role='dimension' type='quantitative' />
+      <column caption='Pand101' datatype='string' name='[Pand10]' role='dimension' type='nominal' />
+      <column caption='QTR1' datatype='integer' name='[QTR]' role='dimension' type='quantitative' />
+      <column aggregation='Hour' caption='Time' datatype='datetime' name='[TIME]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='To Gain' datatype='integer' name='[TO_GAIN]' role='dimension' type='quantitative' />
+      <column caption='Win/Loss' datatype='string' name='[WIN/LOSS]' role='dimension' type='nominal' />
+      <column caption='Year' datatype='integer' name='[YEAR]' role='dimension' type='ordinal' />
+      <column-instance column='[OFF/DEF]' derivation='None' name='[none:OFF/DEF:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.69391' measure-ordering='alphabetic' measure-percentage='0.185897' parameter-percentage='0.120192' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:OFF/DEF:nk]' type='palette'>
+            <map to='#3d6a98'>
+              <bucket>&quot;DEFENSE&quot;</bucket>
+            </map>
+            <map to='#a4a9ab'>
+              <bucket>&quot;OFFENSE&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Show Play Details' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Off&quot;'>
+          <calculation class='tableau' formula='&quot;Off&quot;' />
+        </column>
+      </datasource-dependencies>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Play-by-Play</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='pbp' name='federated.0jo9wsi1i06ki4115pzbx04aiyhr' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Show Play Details' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Off&quot;'>
+              <calculation class='tableau' formula='&quot;Off&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0jo9wsi1i06ki4115pzbx04aiyhr'>
+            <column caption='Show Play Details' datatype='string' name='[Calculation_856035804728614912]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = &quot;On&quot; THEN&#10;    [PLAY_DETAIL]&#10;END' />
+            </column>
+            <column caption='Down' datatype='integer' name='[DOWN]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' caption='Gain' datatype='integer' name='[GAIN]' role='dimension' type='quantitative' />
+            <column caption='Off/Def' datatype='string' name='[OFF/DEF]' role='dimension' type='nominal' />
+            <column caption='Opponent' datatype='string' name='[OPPONENT]' role='dimension' type='nominal' />
+            <column caption='Play Detail' datatype='string' name='[PLAY_DETAIL]' role='dimension' type='nominal' />
+            <column caption='Play Num' datatype='integer' name='[PLAY_NUM]' role='dimension' type='ordinal' />
+            <column caption='Play Type' datatype='string' name='[PLAY_TYPE]' role='dimension' type='nominal' />
+            <column aggregation='Sum' caption='POS1' datatype='integer' name='[POS]' role='dimension' type='quantitative' />
+            <column caption='Pand101' datatype='string' name='[Pand10]' role='dimension' type='nominal' />
+            <column caption='QTR1' datatype='integer' name='[QTR]' role='dimension' type='quantitative' />
+            <column aggregation='Sum' caption='To Gain' datatype='integer' name='[TO_GAIN]' role='dimension' type='quantitative' />
+            <column caption='Win/Loss' datatype='string' name='[WIN/LOSS]' role='dimension' type='nominal' />
+            <column caption='Year' datatype='integer' name='[YEAR]' role='dimension' type='ordinal' />
+            <column-instance column='[OPPONENT]' derivation='Attribute' name='[attr:OPPONENT:nk]' pivot='key' type='nominal' />
+            <column-instance column='[TO_GAIN]' derivation='Attribute' name='[attr:TO_GAIN:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[YEAR]' derivation='Attribute' name='[attr:YEAR:nk]' pivot='key' type='ordinal' />
+            <column-instance column='[PLAY_NUM]' derivation='Count' name='[cnt:PLAY_NUM:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_856035804728614912]' derivation='None' name='[none:Calculation_856035804728614912:nk]' pivot='key' type='nominal' />
+            <column-instance column='[DOWN]' derivation='None' name='[none:DOWN:nk]' pivot='key' type='ordinal' />
+            <column-instance column='[GAIN]' derivation='None' name='[none:GAIN:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[OFF/DEF]' derivation='None' name='[none:OFF/DEF:nk]' pivot='key' type='nominal' />
+            <column-instance column='[OPPONENT]' derivation='None' name='[none:OPPONENT:nk]' pivot='key' type='nominal' />
+            <column-instance column='[PLAY_DETAIL]' derivation='None' name='[none:PLAY_DETAIL:nk]' pivot='key' type='nominal' />
+            <column-instance column='[PLAY_TYPE]' derivation='None' name='[none:PLAY_TYPE:nk]' pivot='key' type='nominal' />
+            <column-instance column='[POS]' derivation='None' name='[none:POS:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[POS]' derivation='None' name='[none:POS:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Pand10]' derivation='None' name='[none:Pand10:nk]' pivot='key' type='nominal' />
+            <column-instance column='[QTR]' derivation='None' name='[none:QTR:nk]' pivot='key' type='ordinal' />
+            <column-instance column='[TO_GAIN]' derivation='None' name='[none:TO_GAIN:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[WIN/LOSS]' derivation='None' name='[none:WIN/LOSS:nk]' pivot='key' type='nominal' />
+            <column-instance column='[YEAR]' derivation='None' name='[none:YEAR:nk]' pivot='key' type='ordinal' />
+            <column-instance column='[POS]' derivation='Sum' name='[sum:POS:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:Calculation_856035804728614912:nk]'>
+            <groupfilter function='level-members' level='[none:Calculation_856035804728614912:nk]' />
+          </filter>
+          <filter class='categorical' column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:DOWN:nk]'>
+            <groupfilter function='level-members' level='[none:DOWN:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:GAIN:qk]' included-values='in-range-or-null'>
+            <min>-22</min>
+            <max>89</max>
+          </filter>
+          <filter class='categorical' column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:OFF/DEF:nk]'>
+            <groupfilter function='level-members' level='[none:OFF/DEF:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:OPPONENT:nk]'>
+            <groupfilter function='level-members' level='[none:OPPONENT:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:PLAY_DETAIL:nk]'>
+            <groupfilter function='level-members' level='[none:PLAY_DETAIL:nk]' user:ui-manual-selection='true' user:ui-manual-selection-is-empty='true' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:PLAY_TYPE:nk]'>
+            <groupfilter function='level-members' level='[none:PLAY_TYPE:nk]' />
+          </filter>
+          <filter class='categorical' column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:POS:ok]'>
+            <groupfilter function='level-members' level='[none:POS:ok]' />
+          </filter>
+          <filter class='quantitative' column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:POS:qk]' included-values='all' />
+          <filter class='categorical' column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:Pand10:nk]'>
+            <groupfilter function='level-members' level='[none:Pand10:nk]' />
+          </filter>
+          <filter class='categorical' column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:QTR:nk]'>
+            <groupfilter function='level-members' level='[none:QTR:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:TO_GAIN:qk]' included-values='all' />
+          <filter class='categorical' column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:WIN/LOSS:nk]'>
+            <groupfilter function='level-members' level='[none:WIN/LOSS:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <computed-sort column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:WIN/LOSS:nk]' direction='DESC' using='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[cnt:PLAY_NUM:qk]' />
+          <filter class='categorical' column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:YEAR:nk]'>
+            <groupfilter function='level-members' level='[none:YEAR:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[sum:POS:qk]' included-values='all' />
+          <slices>
+            <column>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:Calculation_856035804728614912:nk]</column>
+            <column>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:PLAY_DETAIL:nk]</column>
+            <column>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:PLAY_TYPE:nk]</column>
+            <column>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:QTR:nk]</column>
+            <column>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[sum:POS:qk]</column>
+            <column>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:POS:ok]</column>
+            <column>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:POS:qk]</column>
+            <column>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:DOWN:nk]</column>
+            <column>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:WIN/LOSS:nk]</column>
+            <column>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:GAIN:qk]</column>
+            <column>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:TO_GAIN:qk]</column>
+            <column>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:OFF/DEF:nk]</column>
+            <column>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:Pand10:nk]</column>
+            <column>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:OPPONENT:nk]</column>
+            <column>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:YEAR:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:WIN/LOSS:nk]' value='231' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:OFF/DEF:nk]' />
+              <lod column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:Calculation_856035804728614912:nk]' />
+              <lod column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:DOWN:nk]' />
+              <tooltip column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[attr:OPPONENT:nk]' />
+              <tooltip column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[attr:YEAR:nk]' />
+              <tooltip column='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[attr:TO_GAIN:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[cnt:PLAY_NUM:qk]</rows>
+        <cols>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:WIN/LOSS:nk]</cols>
+      </table>
+      <simple-id uuid='{461E03F8-E1A4-4290-8F89-AAB256F88BEB}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:OFF/DEF:nk]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:PLAY_TYPE:nk]' type='filter' />
+            <card param='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:POS:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card param='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:Pand10:nk]' type='filter' />
+            <card param='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:GAIN:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card param='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:YEAR:nk]' type='filter' />
+          </strip>
+          <strip size='160'>
+            <card param='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:OPPONENT:nk]' type='filter' />
+            <card param='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:WIN/LOSS:nk]' type='filter' />
+            <card param='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:QTR:nk]' type='filter' />
+            <card param='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:DOWN:nk]' type='filter' />
+            <card param='[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:OFF/DEF:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:Calculation_856035804728614912:nk]</field>
+            <field>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:DOWN:nk]</field>
+            <field>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:OPPONENT:nk]</field>
+            <field>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:TO_GAIN:qk]</field>
+            <field>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:WIN/LOSS:nk]</field>
+            <field>[federated.0jo9wsi1i06ki4115pzbx04aiyhr].[none:YEAR:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{90847D38-CC6A-4777-BC99-AE4C552D0C2B}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='384' name='Sheet 1' width='384'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
